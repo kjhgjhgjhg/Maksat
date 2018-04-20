@@ -1,0 +1,26 @@
+from pygame import*
+
+init()
+
+screen = display.set_mode((640,480))
+display.set_caption('Circle')
+
+animationTimer = time.Clock()
+a=1
+b=1
+endProgram = False
+
+while not endProgram:
+    for e in event.get():
+        if e.type == QUIT:
+            endProgram = True
+
+    a+=1
+    b+=5
+
+    screen.fill((100,250,200))
+
+    draw.ellipse(screen,(0,250,0),(a,b,40,40))
+
+    animationTimer.tick(1)
+    display.update()
